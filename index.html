@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Idaho Photo Gallery</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8e1f4; /* Light pink background */
+        }
+
+        .navbar {
+            background-color: #ff6f91; /* Pink navigation bar */
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important; /* White text for navbar items */
+        }
+
+        header {
+            background-color: #ff4c8f; /* Darker pink for header */
+        }
+
+        footer {
+            background-color: #ff6f91; /* Pink footer */
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            cursor: pointer;
+            color: #ff4c8f; /* Darker pink for contact icon */
+        }
+
+        .contact-text {
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">University of Idaho</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.uidaho.edu" target="_blank">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.uidaho.edu" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.uidaho.edu/academics" target="_blank">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.uidaho.edu/admissions" target="_blank">Admissions</a>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link contact-icon" data-toggle="modal" data-target="#contactModal">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text">Click to Contact Us</div>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Welcome to University of Idaho</h1>
+        <p class="lead">Excellence in Education</p>
+    </header>
+
+   <!-- Icons Section -->
+  <section class="text-center my-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook fa-3x"></i>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter fa-3x"></i>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-3x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Photo Gallery</h2>
+            <div class="row">
+                <!-- Photo 1 -->
+                <div class="col-md-4 mb-4">
+                    <img src="summer" alt="University Campus Image 1" class="img-fluid" data-toggle="modal" data-target="#galleryModal" data-img-url="summer">
+                </div>
+                <!-- Photo 2 -->
+                <div class="col-md-4 mb-4">
+                    <img src="spring.jpeg" alt="University Campus Image 2" class="img-fluid" data-toggle="modal" data-target="#galleryModal" data-img-url="spring.jpeg">
+                </div>
+                <!-- Photo 3 -->
+                <div class="col-md-4 mb-4">
+                    <img src="fall.jpeg" alt="University Campus Image 3" class="img-fluid" data-toggle="modal" data-target="#galleryModal" data-img-url="fall.jpeg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Dynamic Modal for Image Gallery -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" role="dialog" aria-labelledby="galleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="galleryModalLabel">Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="galleryModalImg" src="" alt="Gallery Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="inputName">Full Name</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email Address</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSubject">Subject</label>
+                            <input type="text" class="form-control" id="inputSubject" placeholder="Enter the subject of your message" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputMessage">Message</label>
+                            <textarea class="form-control" id="inputMessage" rows="5" placeholder="Write your message here" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-light">
+        <p>&copy; 2024 University of Idaho. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Image Modal
+        $('#galleryModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var imgUrl = button.data('img-url');
+            var modal = $(this);
+            modal.find('#galleryModalImg').attr('src', imgUrl);
+        });
+    </script>
+</body>
+
+</html>
